@@ -1,7 +1,7 @@
 
-Maria-Alexandra Barbu, 325CD 
+## Maria-Alexandra Barbu, 325CD 
 
-Tema 1- Protocoale de comunicatii
+# Tema 1- Protocoale de comunicatii
 -------Implementare Router----------
 -------------------------------------------------------------------------------
 
@@ -18,11 +18,11 @@ pachetului cu IP-ul destinatie primit de functie ca parametru.
 	- "get_arp_entry" --> cauta prin tabela ARP intrarea care contine mac-ul
 corespunzator IP-ului primit ca parametru  
 
-	Am realizat alocarea dinamica a celor doua tabele, am creat o coada si am
+Am realizat alocarea dinamica a celor doua tabele, am creat o coada si am
 facut parsarea tabelei de routare (un vector de structuri de tipul
 "route_table_entry") folosind functiile "getline()" si "strtok". 
 
-	Flow-ul programului: 
+Flow-ul programului: 
 	Se primeste un pachet "m". Se extrage header-ul Ethernet (si se verifica
 corectitudinea extragerii). In functie de campul "ether_type" se verifica daca
 este un pachet de tip IP sau ARP. Daca este un pachet IP si destinat
