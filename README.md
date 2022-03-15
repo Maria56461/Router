@@ -5,11 +5,11 @@ Tema 1- Protocoale de comunicatii
 -------Implementare Router----------
 -------------------------------------------------------------------------------
 
-	Structuri definite:
+Structuri definite:
 	- "route_table_entry" = o intrare a tabelei de routare 
 	- "arp_entry" = o intrare a tabelei ARP 
 
-	Functii auxiliare:
+Functii auxiliare:
 	- "get_best_route" --> primeste o tabela de routare, o adresa IP careia i se
 cauta match-ul si doi intregi (limitele [superioara si inferioara] ale
 vectorului de intrari in tabela de routare). Face o cautare binara prin tabela
@@ -32,7 +32,7 @@ verifica daca este un pachet de tip "ECHO request" (campul "type" trebuie sa
 fie egal cu 8). Pentru pachetele de tip "ECHO request" se trimite raspuns de
 tip "ECHO reply" (cu type = 0, un ID random si un seq_number care creste
 progresiv).
-	Pentru pachetele de tip ARP, am verificat dupa extragerea header-ului ARP
+Pentru pachetele de tip ARP, am verificat dupa extragerea header-ului ARP
 daca sunt pachete de tip ARP request sau reply (campul "opcode" indica acest
 aspect). Daca s-a primit un request, am interschimbat sursa cu destinatia in
 header-ul ethernet, iar noua sursa a devenit mac-ul uneia dintre interfetele
@@ -40,7 +40,7 @@ router-ului. Daca am primit un reply, am extras adresa mac sursa si am pus-o in
 tabela ARP alaturi de adresa ip sursa. Am scos elementul fruntas din coada,
 i-am extras header-ul Ethernet, i-am completat adresele sursa si destinatie si
 apoi l-am forwardat spre next_hop. Pachetului de reply primit i-am dat drop. 
-	Pentru pachetele de tip IP nedestinate router-ului: 
+Pentru pachetele de tip IP nedestinate router-ului: 
 	- am verificat ttl-ul sa fie > 1 (daca nu era, am trimis un pachet de tip
 time exceeded (cu type = 11) 
 	- am verificat ca checksum-ul sa fie corect (ca in laboratorul 4) si am
